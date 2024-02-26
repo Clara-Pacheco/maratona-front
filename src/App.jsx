@@ -125,7 +125,12 @@ function App() {
         <input type="text" placeholder="Título" />
         <textarea placeholder="Descrição:"></textarea>
         <input type="text" placeholder="Link:" />
+        <button type="submit">Criar flashcard</button>
       </form>
+
+      <footer className="read-the-docs">
+        <p>Criado por Clara na maratona #queroserdev</p>
+      </footer>
     </>
   );
 }
