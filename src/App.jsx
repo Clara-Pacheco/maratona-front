@@ -1,5 +1,6 @@
-function App() {
+import "./app.css";
 
+function App() {
   // const cardsData = [
   //   {
   //     title: 'Backend vs Frontend',
@@ -100,14 +101,31 @@ function App() {
   //     title: 'Lógica de Programação',
   //     description: 'Lógica de programação é o processo mental de criar instruções para o computador. Essa é a parte que a gente já começa antes mesmo de colocar a mão no computador. É a parte de pensar num passo a passo finito e lógico para resolução de um problema..',
   //     link: 'https://www.youtube.com/live/jb0HlTfUC_g?si=ttEkTJSzMePq1YQM',
-  //   } 
+  //   }
   // ];
-  
+
   return (
     <>
       <header>
-        <h1>Meus FlashCards de Programação</h1>
+        <h1>Meus flashcards de programação</h1>
+        <input type="text" placeholder="Busque um conteúdo" />
       </header>
+      <div className="galeria">
+        <div className="card">
+          <h2>Javascript</h2>
+          <p>Melhor linguagem do mundo!</p>
+          <a href="#" target="_blank">
+            Saiba mais
+          </a>
+        </div>
+      </div>
+
+      <form className="form-container">
+        <h1>Cadastre um novo conteúdo</h1>
+        <input type="text" placeholder="Título" />
+        <textarea placeholder="Descrição:"></textarea>
+        <input type="text" placeholder="Link:" />
+      </form>
     </>
   );
 }
