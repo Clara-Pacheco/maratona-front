@@ -1,5 +1,7 @@
 import "./app.css";
 
+import { useState } from "react";
+
 function App() {
   const cardsData = [
     {
@@ -124,18 +126,35 @@ function App() {
     },
   ];
 
+  const [searchTerm, setSearchTerm] = useState("");
+
+  function handleUserInput(e) {
+    setSearchTerm(e.target.value);
+  }
+
+  const cardFiltrados = cardsData.filter((card) => {
+    return card.title.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+
+  console.log(searchTerm);
+
   return (
     <>
       <header>
         <h1>Meus flashcards de programação</h1>
-        <input type="text" placeholder="Busque um conteúdo" />
+        <input
+          type="text"
+          placeholder="Busque um conteúdo"
+          value={searchTerm}
+          onChange={handleUserInput}
+        />
       </header>
       <div className="gallery">
-        {cardsData.map((card) => {
+        {cardFiltrados.map((card) => {
           return (
             <>
               <div className="card">
-                <h2>{card.title}</h2>
+                <h2 key={card.description}>{card.title}</h2>
                 <p>{card.description}</p>
                 <a href={card.link} target="_blank">
                   Saiba mais
